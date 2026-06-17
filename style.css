@@ -1,0 +1,192 @@
+/* Основные цвета в стиле РФ */
+:root {
+    --blue: #0039A6;
+    --red: #D52B1E;
+    --white: #FFFFFF;
+    --light-gray: #F2F2F2;
+    --dark-text: #1A1A1A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'PT Sans', 'Roboto', Arial, sans-serif;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Шапка */
+header {
+    background: var(--blue);
+    color: var(--white);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gerb {
+    width: 36px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Основная область */
+main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+h2 {
+    color: var(--blue);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Карточки */
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    border-left: 4px solid var(--blue);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Кнопки */
+.btn-primary {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+/* Элементы формы */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* Списки */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.list-item {
+    background: var(--white);
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.list-item h4 {
+    margin-bottom: 4px;
+    color: var(--blue);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    background: #FFC107;
+    color: #000;
+}
+
+.status-badge.approved {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-badge.rejected {
+    background: var(--red);
+    color: white;
+}
+
+/* Панель навигации */
+nav {
+    display: flex;
+    border-top: 1px solid #ccc;
+    background: var(--white);
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 10px 5px;
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #555;
+    transition: 0.2s;
+}
+
+.nav-btn.active {
+    color: var(--blue);
+    font-weight: bold;
+    border-bottom: 3px solid var(--blue);
+}
+
+/* Аналитика */
+.bar {
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.fill {
+    height: 100%;
+    background: var(--blue);
+    border-radius: 5px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Госуслуги. Обжалование КНД</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка с гербом и названием (в стиле РФ) -->
+    <header>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Coat_of_arms_of_the_Russian_Federation_%282008%29.svg/120px-Coat_of_arms_of_the_Russian_Federation_%282008%29.svg.png" alt="Герб РФ" class="gerb">
+            <h1>Обжалование решений КНД</h1>
+        </div>
+    </header>
+
+    <!-- Основной контейнер, где будут переключаться экраны -->
+    <main>
+        <!-- Экран 1: Мои проверки -->
+        <section id="screen-checks" class="screen active">
+            <h2>Мои проверки</h2>
+            <button id="load-checks-btn" class="btn-primary">Загрузить из реестра ГИС ТОР КНД</button>
+            <div id="checks-list" class="list"></div>
+        </section>
+
+        <!-- Экран 2: Подача жалобы -->
+        <section id="screen-form" class="screen">
+            <h2>Новая жалоба</h2>
+            <div id="auto-filled-data" class="card">
+                <!-- Сюда автоматом вставятся данные выбранной проверки -->
+            </div>
+            <label>Предмет жалобы (выберите из предложенных ИИ):</label>
+            <select id="grounds-select" class="form-control">
+                <option value="">-- Выберите основание --</option>
+                <option value="1">Нарушение порядка проведения проверки</option>
+                <option value="2">Неверное применение норм права</option>
+                <option value="3">Отсутствие оснований для проверки</option>
+                <option value="4">Ошибки в акте проверки</option>
+            </select>
+            <button id="generate-draft-btn" class="btn-secondary">Сформировать проект жалобы (ИИ)</button>
+            <textarea id="complaint-text" class="form-control" rows="6" placeholder="Текст жалобы появится здесь. Вы можете его отредактировать."></textarea>
+            <label>Электронная подпись:</label>
+            <select id="sign-type" class="form-control">
+                <option value="simple">Простая электронная подпись (Госуслуги)</option>
+                <option value="qualified">Усиленная квалифицированная подпись</option>
+            </select>
+            <button id="submit-btn" class="btn-primary">Отправить жалобу</button>
+        </section>
+
+        <!-- Экран 3: Статус жалоб -->
+        <section id="screen-status" class="screen">
+            <h2>Мои жалобы</h2>
+            <div id="status-list" class="list"></div>
+        </section>
+
+        <!-- Экран 4: Аналитика -->
+        <section id="screen-analytics" class="screen">
+            <h2>Аналитика (служебный раздел)</h2>
+            <div class="card">
+                <p>Всего жалоб: <span id="total-complaints">0</span></p>
+                <p>Удовлетворено: <span id="satisfied">0</span>%</p>
+                <div class="bar"><div class="fill" style="width: 40%;"></div></div>
+                <p>Топ-оснований: "Нарушение порядка" — 35%</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Нижняя навигация (как в мобильном приложении) -->
+    <nav>
+        <button class="nav-btn active" data-screen="screen-checks">🔍 Проверки</button>
+        <button class="nav-btn" data-screen="screen-form">📝 Жалоба</button>
+        <button class="nav-btn" data-screen="screen-status">📋 Статус</button>
+        <button class="nav-btn" data-screen="screen-analytics">📊 Аналитика</button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
